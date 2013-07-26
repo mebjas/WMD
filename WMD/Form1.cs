@@ -17,7 +17,7 @@ namespace WMD
     {
         //this one is for using in fiel system
         public string searchKey;
-        public bool valid = false;
+        public bool valid = false,isOnline;
         public Thread loadthread = new Thread(showLoader);
         // all parameters done: the above parameters were for uploading to internet
         public Form1()
@@ -32,9 +32,29 @@ namespace WMD
         private void Form1_Load(object sender, EventArgs e)
         {
             Thread.CurrentThread.Name = "main";
+            //code to check if you are online or not
+            if (check_internet())
+            {
+                isOnline = true;
+                label_online.Text = "You are online";
+            }
+            else {
+                isOnline = false;
+                label_online.Text = "You are offline";
+                PrintLog("You are offline. You need to get online to use this tool");
+            }
             
         }
-
+        private bool check_internet() {
+            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void button_Click(object sender, EventArgs e)
         {
             string textdata = domain.Text;
@@ -133,6 +153,7 @@ namespace WMD
         {
             Environment.Exit(0);
         }
-        
+
+       
     }
 }
