@@ -33,17 +33,22 @@ namespace WMD
         {
             Thread.CurrentThread.Name = "main";
             //code to check if you are online or not
+            check_and_set_online_status();
+            
+        }
+        public void check_and_set_online_status()
+        {
             if (check_internet())
             {
                 isOnline = true;
                 label_online.Text = "You are online";
             }
-            else {
+            else
+            {
                 isOnline = false;
                 label_online.Text = "You are offline";
                 PrintLog("You are offline. You need to get online to use this tool");
             }
-            
         }
         private bool check_internet() {
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
