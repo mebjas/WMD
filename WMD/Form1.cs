@@ -99,7 +99,21 @@ namespace WMD
         }
         private bool isUrlExists(string url)
         {
-            return false;
+             try
+             {
+                  //creating a httpwebrequest
+                  HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                  //setting the request method head
+                  request.Method = "HEAD";
+                  //getting the web response
+                  HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+                  //returns true if response is 200
+                  return (response.StatusCode == HttpStatusCode.OK);
+              }
+              catch
+              {
+                  return false;
+              }
         }
         private static string checkDomain(string key)
         {
