@@ -60,6 +60,25 @@ namespace WMD
                 return false;
             }
         }
+        private string download_html(string url)
+        { 
+            //this function downloads the content of html file
+            try
+            {
+                HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(url);
+                myRequest.Method = "GET";
+                WebResponse myResponse = myRequest.GetResponse();
+                StreamReader sr = new StreamReader(myResponse.GetResponseStream(), System.Text.Encoding.UTF8);
+                string result = sr.ReadToEnd();//result has the data so returned from net
+                sr.Close();
+                myResponse.Close();
+                return result;
+            }
+            catch(Exception ex) {
+                PrintLog("exception occured while attempting to read " +url +" \nEXCEPTION: " +ex.Message);
+                return "-1";
+            }
+        }
         private void button_Click(object sender, EventArgs e)
         {
             string textdata = domain.Text;
@@ -82,6 +101,15 @@ namespace WMD
                     if (isUrlExists(d))
                     {
                         //url exists
+                        //download data here
+                        string html_data = download_html(d);
+                        if (html_data == "-1")
+                        {
+                            PrintLog("proram halts here");
+                        }
+                        else { 
+                        
+                        }
                     }
                     else { 
                         //url does not exists
