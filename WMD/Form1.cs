@@ -90,7 +90,7 @@ namespace WMD
             else {
                 tmplog.Text = "";
                 PrintLog("Processing started for: " +textdata);
-                string d = checkDomain(textdata);
+                string d = "http://" +checkDomain(textdata);
                 if (d!="-1")
                 {
                     //a valid domain; it is exactly or one can be made
