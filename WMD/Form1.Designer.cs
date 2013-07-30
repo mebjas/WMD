@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.domain = new System.Windows.Forms.TextBox();
             this.mainlabel = new System.Windows.Forms.Label();
             this.button = new System.Windows.Forms.Button();
@@ -40,13 +41,13 @@
             this.nEWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESETToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eDITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tASKSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eDITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOPYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pASTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tASKSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBOUTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.oNLINEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sITEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +89,8 @@
             // 
             // log
             // 
+            this.log.BackColor = System.Drawing.Color.SeaShell;
+            this.log.DetectUrls = false;
             this.log.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.log.ForeColor = System.Drawing.Color.Green;
             this.log.Location = new System.Drawing.Point(13, 150);
@@ -168,6 +171,12 @@
             this.eXITToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.eXITToolStripMenuItem.Text = "RECENT SEARCHES";
             // 
+            // eXITToolStripMenuItem1
+            // 
+            this.eXITToolStripMenuItem1.Name = "eXITToolStripMenuItem1";
+            this.eXITToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.eXITToolStripMenuItem1.Text = "EXIT";
+            // 
             // eDITToolStripMenuItem
             // 
             this.eDITToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -177,6 +186,24 @@
             this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
             this.eDITToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.eDITToolStripMenuItem.Text = "EDIT";
+            // 
+            // cUTToolStripMenuItem
+            // 
+            this.cUTToolStripMenuItem.Name = "cUTToolStripMenuItem";
+            this.cUTToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.cUTToolStripMenuItem.Text = "CUT";
+            // 
+            // cOPYToolStripMenuItem
+            // 
+            this.cOPYToolStripMenuItem.Name = "cOPYToolStripMenuItem";
+            this.cOPYToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.cOPYToolStripMenuItem.Text = "COPY";
+            // 
+            // pASTEToolStripMenuItem
+            // 
+            this.pASTEToolStripMenuItem.Name = "pASTEToolStripMenuItem";
+            this.pASTEToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.pASTEToolStripMenuItem.Text = "PASTE";
             // 
             // tASKSToolStripMenuItem
             // 
@@ -194,46 +221,22 @@
             this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.aBOUTToolStripMenuItem.Text = "ABOUT";
             // 
-            // eXITToolStripMenuItem1
-            // 
-            this.eXITToolStripMenuItem1.Name = "eXITToolStripMenuItem1";
-            this.eXITToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.eXITToolStripMenuItem1.Text = "EXIT";
-            // 
-            // cUTToolStripMenuItem
-            // 
-            this.cUTToolStripMenuItem.Name = "cUTToolStripMenuItem";
-            this.cUTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cUTToolStripMenuItem.Text = "CUT";
-            // 
-            // cOPYToolStripMenuItem
-            // 
-            this.cOPYToolStripMenuItem.Name = "cOPYToolStripMenuItem";
-            this.cOPYToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cOPYToolStripMenuItem.Text = "COPY";
-            // 
-            // pASTEToolStripMenuItem
-            // 
-            this.pASTEToolStripMenuItem.Name = "pASTEToolStripMenuItem";
-            this.pASTEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pASTEToolStripMenuItem.Text = "PASTE";
-            // 
             // aBOUTToolStripMenuItem1
             // 
             this.aBOUTToolStripMenuItem1.Name = "aBOUTToolStripMenuItem1";
-            this.aBOUTToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aBOUTToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.aBOUTToolStripMenuItem1.Text = "ABOUT";
             // 
             // oNLINEToolStripMenuItem
             // 
             this.oNLINEToolStripMenuItem.Name = "oNLINEToolStripMenuItem";
-            this.oNLINEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.oNLINEToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.oNLINEToolStripMenuItem.Text = "ONLINE";
             // 
             // sITEToolStripMenuItem
             // 
             this.sITEToolStripMenuItem.Name = "sITEToolStripMenuItem";
-            this.sITEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sITEToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.sITEToolStripMenuItem.Text = "SITE";
             // 
             // label_online
@@ -261,6 +264,7 @@
             this.Controls.Add(this.mainlabel);
             this.Controls.Add(this.domain);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "WMD: Web Media Downloader";
