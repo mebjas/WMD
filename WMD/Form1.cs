@@ -111,7 +111,8 @@ namespace WMD
                         
                         }
                     }
-                    else { 
+                    else {
+                        PrintLog("URL doesnt exist. Please try another url");
                         //url does not exists
                     }
 
